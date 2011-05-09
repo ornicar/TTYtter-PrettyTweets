@@ -18,7 +18,7 @@ $handle = sub {
 			"${EM}".
 			&descape($ref->{'user'}->{'name'}).
 			"$OFF".
-			' (http://twitter.com/'.
+			' ('.
 			"${EM}".
 			&descape($ref->{'user'}->{'screen_name'}).
 			"$OFF".
@@ -32,10 +32,10 @@ $handle = sub {
 	$text =~ s/\\n/\n$bar/g;
 
 	print $streamout (
-		&descape("┏━━ "),
+		&descape("┏━━"),
+		$timestamp,
 		$names,
 		"${color}".$menuselect."$OFF",
-		$timestamp,
 		"\n".&descape("┃ "),
 		#(' ' x length $menuselect),
 		$text,
@@ -59,7 +59,7 @@ $dmhandle = sub {
 			"${EM}".
 			&descape($ref->{'sender'}->{'name'}).
 			"$OFF".
-			' (http://twitter.com/'.
+			' ('.
 			"${EM}".
 			&descape($ref->{'sender'}->{'screen_name'}).
 			"$OFF".
@@ -73,10 +73,10 @@ $dmhandle = sub {
 	$text =~ s/\\n/\n$bar/g;
 
 	print $streamout (
-		&descape("┏━━ "),
+		&descape("┏━━"),
+		$timestamp,
 		$names,
 		"${color}".$menuselect."$OFF",
-		$timestamp,
 		"\n".&descape("┃ "),
 		#(' ' x length $menuselect),
 		$text,
